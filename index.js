@@ -76,7 +76,7 @@ function fetchRecipeDetails(recipeId, containerId) {
 
     axios.get(apiUrl, {
         params: {
-            apiKey: "ebbb0ad4631c4f88bf1988818ba4b9de", // Replace with your Spoonacular API key
+            apiKey: "5811446a8d1b43bca5ddbb1fceb4403d", // Replace with your Spoonacular API key
         },
     })
     .then((response) => {
