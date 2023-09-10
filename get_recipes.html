@@ -1,106 +1,57 @@
 <!DOCTYPE html>
-
 <head>
-  <head>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="index.css">
-
-  </head> 
-<head>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link href="index.css" rel="stylesheet" type="text/css" />
-
 </head>
 
 <body>
-  <!--Navigation bar-->
-<div id="nav-placeholder">
+    <!-- Navigation bar -->
+    <div id="nav-placeholder"></div>
 
-</div>
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+    <!-- End of Navigation bar -->
 
-<script>
-$(function(){
-  $("#nav-placeholder").load("nav.html");
-});
-</script>
-<!--end of Navigation bar-->
+    <script src="script.js"></script>
 
-  <script src="script.js"></script>
+    <form>
+        <div class="text_body">
+            <h1>What's in your pantry?</h1>
+        </div>
 
-  <form>
-      <div class="text_body">
-      <h1>What's in your pantry?</h1>
+        <br>
+        <br>
+
+        <div class="text_body">
+            <label for="ingredients"> Ingredients: </label>
+            <textarea id="ingredients" name="ingredients" rows="4" cols="50" class="input" placeholder="Enter food here, separated by commas..."></textarea>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="button_padding">
+            <button id="submit-button" type="button">Submit</button>
+        </div>
+
+        <div id="data-container">
+            <!-- Data will be displayed here -->
+        </div>
+    </form>
+
+
+    <div class="card">
+      <div class="card-content">
+        <div class="content">
+        </div>
       </div>
-
-      <br>
-      <br>
-
-      <div class="text_body">
-      <label for="ingredients"> Ingredients: </label>
-      <textarea id="ingredients" name="ingredients" rows="4" cols="50" class="input" placeholder="Enter food here, separated by commas..."></textarea>
-      </div>
-
-      <br>
-      <br>
-
-    <div class="button_padding">
-        <button onclick="returnText()" type="submit">Submit</button>
     </div>
 
-    <div id="data-container">
-        <!-- Data will be displayed here -->
-    </div>
-      
-  </form>
+    <script type="text/javascript" src="index.js"></script>
 
-<script type="text/javascript" src="index.js"></script>
-
-<script> inputChanges() </script>
-
-<script> fetchData() </script>
-
-<!--
-  potential inputs
-  <form>
-      <div>
-        <label for="query"> Query: </label>
-        <input id="query" type="text" placeholder="Text" name="query" />
-      </div>
-
-      <div>
-        <label for="cuisine"> Cuisine: </label>
-        <input id="cuisine" type="text" placeholder="Text" name="cuisine" />
-      </div>
-
-      <div>
-        <label for="intolerences"> Intolerences: </label>
-        <input id="intolerences" type="text" placeholder="Text" name="intolerences" />
-      </div>
-
-      <div>
-        <label for="ingredients"> Ingredients: </label>
-        <input id="ingredients" type="text" placeholder="Text" name="ingredients" />
-      </div>
-
-    </form> -->
-
-  </div>
-  
 </body>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title> Rev Recipes </title>
-  <link href="index.css" rel="stylesheet" type="text/css" />
-</head>
+</html>
