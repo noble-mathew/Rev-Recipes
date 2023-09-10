@@ -9,28 +9,48 @@ submitButton.addEventListener("click", () => {
 function fetchData() {
     const ingredients = document.getElementById("ingredients").value;
 
-    // Make an API request to your server
-    const api_Url = "http://localhost:3001"; // Update with your server's URL
-
-    fetch(api_Url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({ ingredients }),
-    })
+    // Fetch the data from recipes.json
+    axios.get("recipes.json")
         .then((response) => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json(); // Parse the JSON response
-        })
-        .then((data) => {
-            // Handle and display the data on the frontend
+            const data = response.data;
+
+            // Assuming data.results is an array with at least two items
+            const card1Data = data.results[0];
+            const card2Data = data.results[1];
+
+            // Create card elements
+            const card1 = createCard(card1Data);
+            const card2 = createCard(card2Data);
+
+            // Clear the data container and append card elements
             const dataContainer = document.getElementById("data-container");
-            dataContainer.innerHTML = JSON.stringify(data, null, 2);
+            dataContainer.innerHTML = "";
+            dataContainer.appendChild(card1);
+            dataContainer.appendChild(card2);
         })
         .catch((error) => {
+            // Display an error message to the user
+            const dataContainer = document.getElementById("data-container");
+            dataContainer.innerHTML = `<p>Error fetching data: ${error.message}</p>`;
             console.error("There was a problem with the fetch operation:", error);
         });
+}
+
+function createCard(data) {
+    // Create a card element
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    // Create card content
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.innerHTML = `
+        <h2>${data.title}</h2>
+        <img src="${data.image}" alt="${data.title}">
+    `;
+
+    // Append content to the card
+    card.appendChild(content);
+
+    return card;
 }

@@ -1,149 +1,65 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to HTML Card</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="index.css">
-   
-  </head> 
-<head>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link href="index.css" rel="stylesheet" type="text/css" />
-
-
-
 </head>
-
 <body>
-  <!--Navigation bar-->
-<div id="nav-placeholder">
+    <!-- Navigation bar -->
+    <div id="nav-placeholder"></div>
 
-</div>
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+    <!-- End of Navigation bar -->
 
-<script>
-$(function(){
-  $("#nav-placeholder").load("nav.html");
-});
-</script>
-<!--end of Navigation bar-->
-  
-  <script src="script.js"></script>
-  
-
-  <div class="topnav">
-  
-  </div>
-  </div>
-
-  <div class = "text_body">
-  <br>
-  <h1>Where ingredients meet inspiration, and every meal becomes an adventure.</h1>
-  <br>
-    <br>
-  <p class="desc">
-    <b> Tired of Not Knowing What to Make? </b>
-    <br>
-    <br>
-We've all been there—standing in front of a pantry or fridge filled with random ingredients, unsure of what to make for dinner. It's a common dilemma, especially for busy college students who haven't been shopping in weeks. That's where Rev's Recipes comes to the rescue.
-<br>
-    <br>
-
-
-  <a class="button is-light get-started" onclick = "window.location.href='get_recipes.html';">
-    Get Started
-  </a>
-<br>
-    <br>
-
-
-  <img 
-class = "picture" src="https://media.istockphoto.com/id/1348173424/photo/young-african-student-stirring-pot-during-cooking-class.jpg?s=612x612&w=0&k=20&c=1NwVZgrHcDjNidzJJB70KOz7U32GjoyErp-VsMKmVeU=" alt="Italian Trulli" width = "1000" height = "1000">
-  <br>
-
-  </div>
-
-  <div class="about"><div class="text_body about_text">
-  <b>Rev's Recipes: Your Personalized Cooking Assistant</b>
-<br>
-    <br>
-Rev's Recipes is your personalized cooking assistant, designed to simplify your meal planning and cooking experience. We analyze the ingredients you have available and offer a wide selection of recipes for you to choose from.
-    <br>
-    <br>
-<b>Variety and Flexibility</b>
-<br>
-    <br>
-  Whether you're a college student on a tight budget, a busy professional looking for quick and delicious recipes, or a home cook seeking culinary inspiration, Rev's Recipes is your trusted companion. Our platform offers a treasure trove of recipes that will reignite your passion for cooking and help you make the most of the ingredients you have on hand.
-    <br>
-    <br>
- </p>
-  
-  </div></div>
-
- 
-  
-  
-</body>
-   <style class="footer";>
-        /* Define styles for the footer */
-        footer {
-            background-color: white;
-            color: gray;
-            text-align: center;
-            padding: 10px 0; /* Add some padding for spacing */
-        }
-    </style>
-
-  <footer>
-    
-  © 2023, Rev's Recipes, College Station, TX
-    
-  </footer>
-
-</html>
-
-<!-- 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Rev Recipes</title>
-  </head>
-  <body>
     <form>
-      <div>
-        <label for="query"> Query: </label>
-        <input id="query" type="text" placeholder="Text" name="query" />
-      </div>
+        <div class="text_body">
+            <h1>What's in your pantry?</h1>
+        </div>
 
-      <div>
-        <label for="cuisine"> Cuisine: </label>
-        <input id="cuisine" type="text" placeholder="Text" name="cuisine" />
-      </div>
+        <br>
+        <br>
 
-      <div>
-        <label for="intolerences"> Intolerences: </label>
-        <input id="intolerences" type="text" placeholder="Text" name="intolerences" />
-      </div>
+        <div class="text_body">
+            <label for="ingredients"> Ingredients: </label>
+            <textarea id="ingredients" name="ingredients" rows="4" cols="50" class="input" placeholder="Enter food here, separated by commas..."></textarea>
+        </div>
 
-      <div>
-        <label for="ingredients"> Ingredients: </label>
-        <input id="ingredients" type="text" placeholder="Text" name="ingredients" />
-      </div>
+        <br>
+        <br>
 
-      <div>
-        <button onclick="returnText()" type="submit">Submit</button>
-      </div>
+        <div class="button_padding">
+            <button id="submit-button" type="button">Submit</button>
+        </div>
+
+        <div id="data-container">
+            <!-- Data will be displayed here -->
+        </div>
     </form>
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-content">
+        <div class="content" id="card1-content">
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-content">
+        <div class="content" id="card2-content">
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript" src="index.js"></script>
-  </body>
+</body>
 </html>
--->
