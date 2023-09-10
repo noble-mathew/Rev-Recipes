@@ -1,8 +1,8 @@
 async function returnText() {
-     var query = document.getElementById("ingredients").value;
-     /* var cuisine = document.getElementById("cuisine").value;
-     var intolerences = document.getElementById("intolerences").value;
-     var ingredients = document.getElementById("ingredients").value; */
+     /* var query = document.getElementById("query").value;
+     var cuisine = document.getElementById("cuisine").value;
+     var intolerences = document.getElementById("intolerences").value; */
+  var ingredients = document.getElementById("ingredients").value;
 
   try {
     const url = "http://localhost:3001/";
@@ -11,9 +11,11 @@ async function returnText() {
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify({ query /*, cuisine, intolerences, ingredients*/}),
+      body: JSON.stringify({ /*query , cuisine, intolerences,*/ ingredients }),
     };
-       fetch(url, options).then((res) => { console.log(res)});
+    fetch(url, options).then((res) => {
+      console.log(res);
+    });
   } catch (e) {
     console.error(e);
   }
