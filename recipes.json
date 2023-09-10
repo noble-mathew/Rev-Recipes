@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "id": 715497,
+      "title": "Berry Banana Breakfast Smoothie",
+      "image": "https://spoonacular.com/recipeImages/715497-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 756814,
+      "title": "Powerhouse Almond Matcha Superfood Smoothie",
+      "image": "https://spoonacular.com/recipeImages/756814-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 782622,
+      "title": "Chocolate Peanut Butter Cinnamon Smoothie",
+      "image": "https://spoonacular.com/recipeImages/782622-312x231.png",
+      "imageType": "png"
+    },
+    {
+      "id": 655235,
+      "title": "Peanut Butter and Jelly Smoothie",
+      "image": "https://spoonacular.com/recipeImages/655235-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 660227,
+      "title": "Skinny Green Monster Smoothie",
+      "image": "https://spoonacular.com/recipeImages/660227-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 634048,
+      "title": "Banana Chocolate Pudding",
+      "image": "https://spoonacular.com/recipeImages/634048-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 638604,
+      "title": "Chilled Swiss Oatmeal",
+      "image": "https://spoonacular.com/recipeImages/638604-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 644044,
+      "title": "Protein Strawberry Smoothie",
+      "image": "https://spoonacular.com/recipeImages/644044-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 645479,
+      "title": "Green Monster Ice Pops",
+      "image": "https://spoonacular.com/recipeImages/645479-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 1082038,
+      "title": "Big Batch Smoothie Bowl",
+      "image": "https://spoonacular.com/recipeImages/1082038-312x231.jpg",
+      "imageType": "jpg"
+    }
+  ],
+  "offset": 0,
+  "number": 10,
+  "totalResults": 154
+}

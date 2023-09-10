@@ -1,30 +1,35 @@
-// Imports
 import express from "express";
 import cors from "cors";
 import axios from "axios";
+import fs from "fs"; // Import the 'fs' module
 
-// global.localStorage = new LocalStorage("./scratch");
-
-// Set up Express App for use
-//Line 10-11 set up the CORS policy and the request body parser
 const app = express();
 const port = 3001;
 app.use(cors());
 app.use(express.json());
 
 let params = {
-  api_key: '7814cf75a6954dd790bcc59be0e80db7',
- }
+  api_key: 'ebbb0ad4631c4f88bf1988818ba4b9de',
+  ingredients: "", // Initialize ingredients
+};
 
-// The url using the parameters
-const api_url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${encodeURIComponent(
-  params.api_key
-)}&findIngredients=${params.ingredients}`;
+function fetchDataAndSaveToFile() {
+  const api_url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${encodeURIComponent(
+    params.api_key
+  )}&includeIngredients=${encodeURIComponent(params.ingredients)}`;
 
+  axios
+    .get(api_url)
+    .then((response) => {
+      const data = response.data;
 
-//Additional parameters  query=${encodeURIComponent(obj.queries)}&cuisines=${obj.cuisines}&intolerances=${obj.intolerances}&
-
-// Getting the data from the API using fetch
+      // Save the data to recipes.json, overwriting the file
+      fs.writeFileSync('recipes.json', JSON.stringify(data, null, 2), 'utf8');
+    })
+    .catch((error) => {
+      console.error("Error fetching data from the third-party API:", error);
+    });
+}
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
@@ -32,36 +37,30 @@ app.listen(port, () => {
 
 app.post("/", (req, res) => {
   try {
-    // Your route handling logic
-    // Use for...of to iterate over object properties
     for (const [key, value] of Object.entries(req.body)) {
       params[key] = value;
     }
 
-    console.log(req.body, params);
+    // Call the function to fetch data and save it to "recipes.json"
+    fetchDataAndSaveToFile();
 
-    // Use JSON.stringify to convert params to a JSON string
-  }
-      catch (error) {
+    console.log(req.body, params);
+    res.status(200).send("Data submitted and saved to 'recipes.json'");
+  } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
-  };
+  }
 });
 
-
-// Connecting to the 3rd party API
-app.get("/api/data", async (req, res) => {
+app.get("/api/data", (req, res) => {
   try {
-    // Make a GET request to the third-party API
-    const response = await axios.get(api_url);
-
-    // Extract the relevant data from the response
-    const data = response.data;
+    // Read the data from "recipes.json"
+    const data = JSON.parse(fs.readFileSync('recipes.json', 'utf8'));
 
     // Send the data as JSON to the frontend
     res.json(data);
   } catch (error) {
-    console.error("Error fetching data from the third-party API:", error);
+    console.error("Error reading data from 'recipes.json':", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
