@@ -22,48 +22,68 @@
     });
   </script>
   <!--end of Navigation bar-->
+  <form>
+      <div class="text_body">
+      <h1>What ingredients do you have?</h1>
+      </div>
 
-  <div class="text_body">
-    <h1>What ingredients do you have?</h1>
-    <br>
-    <br>
-    
-    <label for="Ingredients">Ingredients:</label>
-    <textarea id="freeform" name="freeform" rows="4" cols="50" class="input">
-  Enter text here, separated by commas...
-  </textarea>
+      <br>
+      <br>
 
-    <br>
-    <br>
+      <div class="text_body">
+      <label for="ingredients"> Ingredients: </label>
+      <textarea id="ingredients" name="ingredients" rows="4" cols="50" class="input" placeholder="Enter text here, separated by commas..."></textarea>
+      </div>
 
-   <label for="Output">Your Pantry:</label>
-    <input type="text" id="outputText" class="output" readonly>
-</div>
+      <br>
+      <br>
+
+    <div class="button_padding">
+        <button onclick="returnText()" type="submit">Submit</button>
+    </div>
+      
+  </form>
 
 <script>
     // Get references to the textarea and output text box
-    const textarea = document.getElementById("freeform");
+    const textarea = document.getElementById("ingredients");
     const outputText = document.getElementById("outputText");
 
     // Add an event listener to the textarea to capture input changes
     textarea.addEventListener("input", function() {
         // Get the value of the textarea
         const inputValue = textarea.value;
-        
-        // Update the value of the output text box with the input value
-        outputText.value = inputValue;
+      
     });
 </script>
 
+<!--
+  potential inputs
+  <form>
+      <div>
+        <label for="query"> Query: </label>
+        <input id="query" type="text" placeholder="Text" name="query" />
+      </div>
 
+      <div>
+        <label for="cuisine"> Cuisine: </label>
+        <input id="cuisine" type="text" placeholder="Text" name="cuisine" />
+      </div>
 
+      <div>
+        <label for="intolerences"> Intolerences: </label>
+        <input id="intolerences" type="text" placeholder="Text" name="intolerences" />
+      </div>
 
+      <div>
+        <label for="ingredients"> Ingredients: </label>
+        <input id="ingredients" type="text" placeholder="Text" name="ingredients" />
+      </div>
 
+    </form> -->
 
+    <script type="text/javascript" src="index.js"></script>
 
-
-    
- 
   </div>
   
 </body>

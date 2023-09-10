@@ -1,64 +1,65 @@
 html {
-    height: 100%;
-    width: 100%;
-    background-color:#A24857;
-  }
-  
-  
-  
-  h1 {
-    font-size: 50px;
-    margin-bottom: -25px;
-    margin-top: 25px;
-    font-weight: 15px;
-  }
-  
-  h3 {
-    font-size: 20px;
-  }
-  
-  .text_body {
-    padding: 0 30% 0 10%;
-    color: white;
-  }
-  
-  .topnav-right {
-    float: right;
-  }
-  
-  .navbar{
-    margin: 0px -15px -10px 0px
-  }
-  
-  .topnav{
-    font-size: 20px;
-    background-color: white;
-  }
-  .sign-in{
-    background-color:maroon;
-  }
-  
-  .active{
-    background-color: maroon;
-  }
-  
-  .footer {
-      height: 200px; /* Adjust the value as needed */
-  }
+  height: 100%;
+  width: 100%;
+  background-color: #a24857;
+}
 
-  .get-started{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .picture{
-    /* display: block;
+h1 {
+  font-size: 50px;
+  margin-bottom: -25px;
+  margin-top: 25px;
+  font-weight: 15px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.text_body {
+  padding: 0 30% 0 10%;
+  color: white;
+}
+
+.button_padding {
+  padding: 0 30% 0 40%;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.navbar {
+  margin: 0px -15px -10px 0px;
+}
+
+.topnav {
+  font-size: 20px;
+  background-color: white;
+}
+.sign-in {
+  background-color: maroon;
+}
+
+.active {
+  background-color: maroon;
+}
+
+.footer {
+  height: 200px; /* Adjust the value as needed */
+}
+
+.get-started {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.picture {
+  /* display: block;
     margin-left: auto;
     margin-right: auto; */
-    width: 80%;
-  }
-  
-  .about{
-    padding-top: 30px;
-  }
-  
+  width: 80%;
+}
+
+.about {
+  padding-top: 30px;
+}
