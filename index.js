@@ -18,7 +18,7 @@ function fetchData() {
             const card1Data = data.results[0];
             const card2Data = data.results[1];
 
-            // Create card elements
+            // Create card elements for the cards
             const card1 = createCard(card1Data);
             const card2 = createCard(card2Data);
 
@@ -27,6 +27,9 @@ function fetchData() {
             dataContainer.innerHTML = "";
             dataContainer.appendChild(card1);
             dataContainer.appendChild(card2);
+
+            // Load recipe details next to the cards
+            loadRecipeDetails(data.results);
         })
         .catch((error) => {
             // Display an error message to the user
@@ -53,4 +56,60 @@ function createCard(data) {
     card.appendChild(content);
 
     return card;
+}
+
+function loadRecipeDetails(recipes) {
+    // Assuming you want to display details for the first two recipes
+    const recipe1 = recipes[0];
+    const recipe2 = recipes[1];
+
+    // Fetch and display details for recipe 1
+    fetchRecipeDetails(recipe1.id, "card1-content");
+
+    // Fetch and display details for recipe 2
+    fetchRecipeDetails(recipe2.id, "card2-content");
+}
+
+function fetchRecipeDetails(recipeId, containerId) {
+    // Make an API request to get recipe details using the recipe ID
+    const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information`;
+
+    axios.get(apiUrl, {
+        params: {
+            apiKey: "ebbb0ad4631c4f88bf1988818ba4b9de", // Replace with your Spoonacular API key
+        },
+    })
+    .then((response) => {
+        const recipeDetails = response.data;
+
+        // Create elements to display recipe details
+        const recipeDetailsElement = createRecipeDetailsElement(recipeDetails);
+
+        // Append recipe details elements to the appropriate containers
+        const cardContent = document.getElementById(containerId);
+        cardContent.innerHTML = ""; // Clear the existing content
+        cardContent.appendChild(recipeDetailsElement);
+    })
+    .catch((error) => {
+        // Display an error message to the user
+        console.error("Error fetching recipe details:", error);
+    });
+}
+
+function createRecipeDetailsElement(recipe) {
+    // Create a string containing the recipe's ingredients and instructions
+    const ingredients = recipe.extendedIngredients.map(ingredient => ingredient.original).join(", ");
+    const instructions = recipe.instructions;
+
+    const recipeDetails = document.createElement("div");
+    recipeDetails.classList.add("recipe-details");
+    recipeDetails.innerHTML = `
+        <h3>${recipe.title}</h3>
+        <p>Recipe ID: ${recipe.id}</p>
+        <p>Image Type: ${recipe.imageType}</p>
+        <p>Ingredients: ${ingredients}</p>
+        <p>Instructions: ${instructions}</p>
+    `;
+
+    return recipeDetails;
 }
