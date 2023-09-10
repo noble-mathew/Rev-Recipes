@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous">
+    </script>
+
+  <link rel="stylesheet" href="edit_pantry.css"> <link rel="stylesheet" href="index.css">
+
+
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <div id="nav-placeholder"></div>
+
+  <script>
+    $(function () {
+      $("#nav-placeholder").load("nav.html");
+    });
+  </script>
+  <!--end of Navigation bar-->
+
+  <div class="text_body">
+    <h1>What ingredients do you have?</h1>
+    <br>
+    <br>
+    
+    <label for="Ingredients">Ingredients:</label>
+    <textarea id="freeform" name="freeform" rows="4" cols="50" class="input">
+  Enter text here, separated by commas...
+  </textarea>
+
+    <br>
+    <br>
+
+   <label for="Output">Your Pantry:</label>
+    <input type="text" id="outputText" class="output" readonly>
+</div>
+
+<script>
+    // Get references to the textarea and output text box
+    const textarea = document.getElementById("freeform");
+    const outputText = document.getElementById("outputText");
+
+    // Add an event listener to the textarea to capture input changes
+    textarea.addEventListener("input", function() {
+        // Get the value of the textarea
+        const inputValue = textarea.value;
+        
+        // Update the value of the output text box with the input value
+        outputText.value = inputValue;
+    });
+</script>
+
+
+
+
+
+
+
+
+    
+ 
+  </div>
+  
+</body>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
