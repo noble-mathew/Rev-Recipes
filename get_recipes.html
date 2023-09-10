@@ -58,21 +58,18 @@ $(function(){
     <div class="button_padding">
         <button onclick="returnText()" type="submit">Submit</button>
     </div>
+
+    <div id="data-container">
+        <!-- Data will be displayed here -->
+    </div>
       
   </form>
 
-<script>
-    // Get references to the textarea and output text box
-    const textarea = document.getElementById("ingredients");
-    const outputText = document.getElementById("outputText");
+<script type="text/javascript" src="index.js"></script>
 
-    // Add an event listener to the textarea to capture input changes
-    textarea.addEventListener("input", function() {
-        // Get the value of the textarea
-        const inputValue = textarea.value;
-      
-    });
-</script>
+<script> inputChanges() </script>
+
+<script> fetchData() </script>
 
 <!--
   potential inputs
@@ -98,8 +95,6 @@ $(function(){
       </div>
 
     </form> -->
-
-    <script type="text/javascript" src="index.js"></script>
 
   </div>
   
