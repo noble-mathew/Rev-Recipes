@@ -105,8 +105,6 @@ function createRecipeDetailsElement(recipe) {
     recipeDetails.classList.add("recipe-details");
     recipeDetails.innerHTML = `
         <h3>${recipe.title}</h3>
-        <p>Recipe ID: ${recipe.id}</p>
-        <p>Image Type: ${recipe.imageType}</p>
         <p>Ingredients: ${ingredients}</p>
         <p>Instructions: ${instructions}</p>
     `;

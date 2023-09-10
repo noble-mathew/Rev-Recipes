@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 let params = {
-  api_key: 'ebbb0ad4631c4f88bf1988818ba4b9de',
+  api_key: '5811446a8d1b43bca5ddbb1fceb4403d',
   ingredients: "", // Initialize ingredients
 };
 
